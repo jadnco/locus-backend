@@ -1,0 +1,28 @@
+{
+  "name": "locus-backend",
+  "version": "1.0.0",
+  "description": "Backend service for locus app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadnco/locus-backend.git"
+  },
+  "author": "Jaden Dessureault <hello@jaden.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadnco/locus-backend/issues"
+  },
+  "homepage": "https://github.com/jadnco/locus-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
