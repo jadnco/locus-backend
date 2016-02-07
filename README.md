@@ -12,15 +12,27 @@
 | `email`     | Email address used to sign up.                               | `String` | john.smith@example.com   |
 
 
-#### GET `user/:id`
+#### GET `user/:id|:handle`
 
 Returns a single user record.
+
+Example request:
+
+> GET `/api/user/jadnco`
 
 Example response:
 
 ```js
 {
-
+  "user": {
+    "_id": "559443b15b95cfd61950bb65",
+    "firstName": "John",
+    "lastName": "Smith"
+    "fullName": "John Smith",
+    "handle": "smith89",
+    "email": "smith@example.com",
+    "created": "2015-07-01T19:46:57.273Z"
+  }
 }
 ```
 
