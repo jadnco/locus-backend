@@ -1,4 +1,3 @@
-// User model
 'use strict';
 
 const mongoose = require('mongoose');
@@ -9,7 +8,7 @@ let UserSchema = new Schema({
   lastName: String,
   fullName: String,
   email: String,
-  joined: {
+  created: {
     type: Date,
     default: Date.now,
   },
