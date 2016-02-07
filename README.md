@@ -48,16 +48,16 @@ Example response:
 
 | Property    | Description                                                  | Type           | Example                  |
 |-------------|--------------------------------------------------------------|----------------|--------------------------|
-| `hasPhoto`  | The year make of the car.                                    | `Boolean`      | true                     |
+| `hasPhoto`  | Whether a photo is contained or not.                         | `Boolean`      | true                     |
 | `photo`     | Embedded `Photo` record or void.                             | `Photo | null` |                          |
 | `car`       | Reference to `Car` record.                                   | `Car`          | car id                   |
 | `spotter`   | Reference to `User` record.                                  | `User`         | user id                  |
 | `created`   | When the record was created.                                 | `Date`         | 2015-12-29T01:46:49.453Z |
 
 
-#### GET `car/:id`
+#### GET `spot/:id`
 
-Returns a single car record.
+Returns a single spot record.
 
 Example response:
 
