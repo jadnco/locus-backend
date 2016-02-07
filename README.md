@@ -12,15 +12,15 @@
 | `email`     | Email address used to sign up.                               | `String` | john.smith@example.com   |
 
 
-#### GET `user/:id|:handle`
+#### GET `user/:id[:handle]`
 
 Returns a single user record.
 
-Example request:
+##### Example
 
-> GET `/api/user/jadnco`
+> GET /api/user/jadnco
 
-Example response:
+Response:
 
 ```js
 {
