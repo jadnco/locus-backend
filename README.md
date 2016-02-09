@@ -113,10 +113,10 @@ Example response:
 | `car`       | Reference to `Car` record.                                   | `Car`          |                |
 | `spotter`   | Reference to `User` record.                                  | `User`         |                |
 | `created`   | When the record was created.                                 | `Date`         | `Date.now`     |
-| `views`     | How many times the Spot has been viewed by a unique user.    | `Number`       | 0              |
-| `likes`     | Amount of times the spot has been liked.                     | `Number`       | 0              |
+| `viewsCount`     | How many times the Spot has been viewed by a unique user.    | `Number`       | 0              |
+| `likesCount`     | Amount of times the spot has been liked.                     | `Number`       | 0              |
 | `modified`  | When the record was last updated.                            | `Date`         |                |
-
+| `likes`  | List of user ID's that have liked the spot.                     | `Array<User>`   |                |
 
 #### GET spots/:id
 
