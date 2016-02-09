@@ -52,13 +52,16 @@ This command will generate a new `build` directory with files in ES5.
 
 | Property    | Description                                                  | Type     | Default Value |
 |-------------|--------------------------------------------------------------|----------|---------------|
-| `firstName` | Self-explanatory – first name of user.                       | `String` |               |
-| `lastName`  | Last name of user.                                           | `String` |               |
-| `fullName`  | Concatenation of the `firstName` and `lastName`.             | `String` |               |
+| `name` | Full/custom name of user.                     | `String` |               |
+| `email`     | Email address used to sign up.                               | `String` |               |
+| `description`    | Description of user, serves as the bio. | `String` |               |
+| `location`    | Location of the user | `String` |               |
+| `likesCount`    | Total sum of all Spots the user has liked. | `Number` | 0               |
+| `followersCount`    | Total sum of all follower users. | `Number` | 0              |
+| `followingCount`    | Total sum of all following users. | `Number` | 0              |
+| `spotsCount`    | Total sum of all Spots created. | `Number` | 0              |
 | `handle`    | Username and unique identifier with minimum of 3 characters. | `String` |               |
 | `created`   | When the record was created.                                 | `Date`   | `Date.now`    |
-| `email`     | Email address used to sign up.                               | `String` |               |
-
 
 #### GET users/:id[:handle]
 
@@ -66,21 +69,57 @@ Returns a single user record.
 
 ##### Example
 
-> GET /api/users/jadnco
+> GET /api/users/smith89
 
 Response:
 
 ```js
 {
   "user": {
-    "_id": "559443b15b95cfd61950bb65",
-    "firstName": "John",
-    "lastName": "Smith"
-    "fullName": "John Smith",
+    "name": "John Smith",
     "handle": "smith89",
+    "location": "Toronto, Canada",
     "email": "smith@example.com",
-    "created": "2015-07-01T19:46:57.273Z"
+    "description": "Just a normal dude with a normal name.",
+    "_id": "56b95ffa9a663798f7c98330",
+    "created": "2016-02-09T03:41:46.934Z",
+    "spotsCount": 0,
+    "followingCount": 0,
+    "followersCount": 0,
+    "likesCount": 0
   }
+}
+```
+
+#### GET users/:id[:handle]/followers
+
+Returns a list of `User` objects.
+
+##### Example
+
+> GET /api/users/jadnco/followers
+
+Response:
+
+```js
+{
+  "users": [
+    {
+      "name": "John Smith",
+      "handle": "smith89",
+      "location": "Toronto, Canada",
+      "email": "smith@example.com",
+      "description": "Just a normal dude with a normal name.",
+      "_id": "56b95ffa9a663798f7c98330",
+      "created": "2016-02-09T03:41:46.934Z",
+      "spotsCount": 0,
+      "followingCount": 0,
+      "followersCount": 0,
+      "likesCount": 0
+    }
+
+    ...
+  ]
 }
 ```
 
@@ -116,7 +155,7 @@ Example response:
 | `viewsCount`     | How many times the Spot has been viewed by a unique user.    | `Number`       | 0              |
 | `likesCount`     | Amount of times the spot has been liked.                     | `Number`       | 0              |
 | `modified`  | When the record was last updated.                            | `Date`         |                |
-| `likes`  | List of user ID's that have liked the spot.                     | `Array<User>`   |                |
+| `likes`  | List of user ID's that have liked the spot.                     | `Array<User.id>`   |                |
 
 #### GET spots/:id
 
