@@ -17,7 +17,9 @@
 
 ## Retrieving a single User
 
-```GET users/:id[:handle]```
+```
+GET users/:id[:handle]
+```
 
 ### Response
 
@@ -41,11 +43,15 @@
 
 ## Retrieving authenticated User
 
-```GET users/me```
+```
+GET users/me
+```
 
-## Retrieving User followers
+## Retrieving followers
 
-```GET /api/users/:id[:handle]/followers```
+```
+GET /api/users/:id[:handle]/followers
+```
 
 ### Response
 
@@ -73,9 +79,11 @@ Returns a list of `User` objects.
 }
 ```
 
-## Retrieving User following
+## Retrieving following
 
-```GET /api/users/:id[:handle]/following```
+```
+GET /api/users/:id[:handle]/following
+```
 
 ### Response
 
@@ -101,9 +109,22 @@ Returns a list of `User` objects.
     ...
   ]
 }
+```
 
 ## Creating a User
 
+```
+POST /api/users
+```
+
 ## Updating a User
 
+```
+PUT /api/users/:id[:handle]
+```
+
 ## Deleting a User
+
+```
+DELETE /api/users/:id[:handle]
+```
