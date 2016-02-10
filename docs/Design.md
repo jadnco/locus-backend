@@ -2,7 +2,7 @@
 
 ## RESTful API
 
-![User Model Tree](./diagrams/User-Model-Tree.svg)
+![User Model Tree](docs/diagrams/User-Model-Tree.svg)
 
 ## Components
 
