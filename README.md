@@ -68,7 +68,7 @@ This command will generate a new `build` directory with files in ES5.
 
 Note: Need to figure out another solution of keeping track of the users that have liked the spot. Having a list of user ids is alright for now, but it will quickly become an issue when dealing with thousands of users.
 
-One idea is to have the route `spot/:id/likes` which would return the user objects, just by querying separately.
+One idea is to have the route `spot/:id/likes` which would return the user objects, just by querying separately. A new `Likes` model would need to be made.
 
 #### GET spots/:id
 
