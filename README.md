@@ -50,27 +50,7 @@ This command will generate a new `build` directory with files in ES5.
 
 - [User](docs/api/User.md)
 
-## Models
-
-### Car
-
-| Property    | Description                                                  | Type     | Default Value   |
-|-------------|--------------------------------------------------------------|----------|-----------------|
-| `year`      | The year make of the car.                                    | `Number` | 0               |
-| `created`   | When the record was created.                                 | `Date`   | `Date.now`      |
-
-
-#### GET cars/:id
-
-Returns a single car record.
-
-Example response:
-
-```js
-{
-
-}
-```
+## Model Notes
 
 ### Spot
 
@@ -81,10 +61,14 @@ Example response:
 | `car`       | Reference to `Car` record.                                   | `Car`          |                |
 | `spotter`   | Reference to `User` record.                                  | `User`         |                |
 | `created`   | When the record was created.                                 | `Date`         | `Date.now`     |
-| `viewsCount`     | How many times the Spot has been viewed by a unique user.    | `Number`       | 0              |
-| `likesCount`     | Amount of times the spot has been liked.                     | `Number`       | 0              |
+| `viewsCount` | How many times the Spot has been viewed by a unique user.    | `Number`       | 0              |
+| `likesCount` | Amount of times the spot has been liked.                     | `Number`       | 0              |
 | `modified`  | When the record was last updated.                            | `Date`         |                |
 | `likes`  | List of user ID's that have liked the spot.                     | `Array<User.id>`   |                |
+
+Note: Need to figure out another solution of keeping track of the users that have liked the spot. Having a list of user ids is alright for now, but it will quickly become an issue when dealing with thousands of users.
+
+One idea is to have the route `spot/:id/likes` which would return the user objects, just by querying separately.
 
 #### GET spots/:id
 
