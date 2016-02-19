@@ -70,6 +70,8 @@ Note: Need to figure out another solution of keeping track of the users that hav
 
 One idea is to have the route `spot/:id/likes` which would return the user objects, just by querying separately. A new `Likes` model would need to be made.
 
+I had the idea of each `Spot` having different kinds of media, sort of like a slideshow of photos and videos. The uploader would be able to choose the front/featured image and all others could be swiped through. This is low priority for now, a single image should be good.
+
 #### GET spots/:id
 
 Returns a single spot record.
