@@ -52,37 +52,6 @@ This command will generate a new `build` directory with files in ES5.
 
 ## Model Notes
 
-### Spot
-
-| Property    | Description                                                  | Type           | Default Value  |
-|-------------|--------------------------------------------------------------|----------------|----------------|
-| `hasPhoto`  | Whether a photo is contained or not.                         | `Boolean`      |                |
-| `photo`     | Embedded `Photo` record or void.                             | `Photo | null` |                |
-| `car`       | Reference to `Car` record.                                   | `Car`          |                |
-| `spotter`   | Reference to `User` record.                                  | `User`         |                |
-| `created`   | When the record was created.                                 | `Date`         | `Date.now`     |
-| `viewsCount` | How many times the Spot has been viewed by a unique user.    | `Number`       | 0              |
-| `likesCount` | Amount of times the spot has been liked.                     | `Number`       | 0              |
-| `modified`  | When the record was last updated.                            | `Date`         |                |
-| `likes`  | List of user ID's that have liked the spot.                     | `Array<User.id>`   |                |
-
-Note: Need to figure out another solution of keeping track of the users that have liked the spot. Having a list of user ids is alright for now, but it will quickly become an issue when dealing with thousands of users.
-
-One idea is to have the route `spot/:id/likes` which would return the user objects, just by querying separately. A new `Likes` model would need to be made.
-
-I had the idea of each `Spot` having different kinds of media, sort of like a slideshow of photos and videos. The uploader would be able to choose the front/featured image and all others could be swiped through. This is low priority for now, a single image should be good.
-
-#### GET spots/:id
-
-Returns a single spot record.
-
-Example response:
-
-```js
-{
-
-}
-```
 
 ### Stats
 
