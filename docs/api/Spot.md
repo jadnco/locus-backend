@@ -55,6 +55,8 @@ GET spots/:id
 POST /api/spots
 ```
 
+When a new `Spot` record is created, a `Likes` record also gets created. A relationship is then established by the two via ID reference.
+
 ### Request
 
 ```js
