@@ -24,116 +24,90 @@ I had the idea of each `Spot` having different kinds of media, sort of like a sl
 
 Properties like `mediaCount`, `featured` etc. would need to be added.
 
-## Retrieving a single User
+## Retrieving a single Spot
 
 ```
-GET users/:id[:handle]
+GET spots/:id
 ```
 
 ### Response
 
 ```js
 {
-  "user": {
-    "name": "John Smith",
-    "handle": "smith89",
-    "location": "Toronto, Canada",
-    "email": "smith@example.com",
-    "description": "Just a normal dude with a normal name.",
-    "_id": "56b95ffa9a663798f7c98330",
-    "created": "2016-02-09T03:41:46.934Z",
-    "spotsCount": 0,
-    "followingCount": 0,
-    "followersCount": 0,
-    "likesCount": 0
+  "spot": {
+    "_id": "56c9549c638dab8f0061b993",
+    "likes": "56c9549c638dab8f0061b994",
+    "title": "2009 Maserati Gran Turismo",
+    "photo": "3afdeccd71a202687894203a91a92072",
+    "description": "The first 90% of a project takes 90% of the time, the last 10% takes the other 90% of the time.",
+    "created": "2016-02-21T06:09:32.093Z",
+    "spotter": [],
+    "commentsCount": 96,
+    "likesCount": 269,
+    "viewsCount": 0
   }
 }
 ```
 
-## Retrieving authenticated User
+## Creating a Spot
 
 ```
-GET users/me
+POST /api/spots
 ```
 
-## Retrieving followers
+### Request
 
-```
-GET /api/users/:id[:handle]/followers
+```js
+{
+  "spot": {
+    "title": "2017 Ford GT",
+    "description": "Here's something to think about: How come you never see a headline like 'Psychic Wins Lottery.'"
+  }
+}
 ```
 
 ### Response
 
-Returns a list of `User` objects.
-
 ```js
 {
-  "users": [
-    {
-      "name": "John Smith",
-      "handle": "smith89",
-      "location": "Toronto, Canada",
-      "email": "smith@example.com",
-      "description": "Just a normal dude with a normal name.",
-      "_id": "56b95ffa9a663798f7c98330",
-      "created": "2016-02-09T03:41:46.934Z",
-      "spotsCount": 0,
-      "followingCount": 0,
-      "followersCount": 0,
-      "likesCount": 0
-    },
-
-    ...
-  ]
+  "spot": {
+    "likes": "56ce70e4b78be0352f872a5c",
+    "title": "2017 Ford GT",
+    "description": "Here's something to think about: How come you never see a headline like 'Psychic Wins Lottery.'",
+    "_id": "56ce70e4b78be0352f872a5b",
+    "created": "2016-02-25T03:11:32.430Z",
+    "spotter": [],
+    "commentsCount": 0,
+    "likesCount": 0,
+    "viewsCount": 0
+  }
 }
 ```
 
-## Retrieving following
+## Updating a Spot
 
 ```
-GET /api/users/:id[:handle]/following
+PUT /api/spots/:id
+```
+
+### Request
+
+```js
+{
+  "spot": {
+    "title": "2017 Ford GT Spyder"
+  }
+}
 ```
 
 ### Response
 
-Returns a list of `User` objects.
-
 ```js
-{
-  "users": [
-    {
-      "name": "John Smith",
-      "handle": "smith89",
-      "location": "Toronto, Canada",
-      "email": "smith@example.com",
-      "description": "Just a normal dude with a normal name.",
-      "_id": "56b95ffa9a663798f7c98330",
-      "created": "2016-02-09T03:41:46.934Z",
-      "spotsCount": 0,
-      "followingCount": 0,
-      "followersCount": 0,
-      "likesCount": 0
-    },
-
-    ...
-  ]
-}
-```
-
-## Creating a User
 
 ```
-POST /api/users
-```
 
-## Updating a User
+## Deleting a Spot
 
 ```
-PUT /api/users/:id[:handle]
-```
-
-## Deleting a User
-
-```
-DELETE /api/users/:id[:handle]
+DELETE /api/spots/:id
 ```

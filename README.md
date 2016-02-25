@@ -48,6 +48,7 @@ This command will generate a new `build` directory with files in ES5.
 
 ## API
 
+- [Spot](docs/api/Spot.md)
 - [User](docs/api/User.md)
 
 ## Model Notes
