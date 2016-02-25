@@ -103,6 +103,7 @@ PUT /api/spots/:id
 ### Response
 
 ```js
+200 OK
 
 ```
 
@@ -110,4 +111,11 @@ PUT /api/spots/:id
 
 ```
 DELETE /api/spots/:id
+```
+
+### Response
+
+```js
+200 OK
+
 ```
