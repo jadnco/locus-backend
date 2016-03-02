@@ -92,6 +92,8 @@ When a new `Spot` record is created, a `Likes` record also gets created. A relat
 PUT /api/spots/:id
 ```
 
+When updating a `Spot` record the property `modified` gets set to the current time.
+
 ### Request
 
 ```js
