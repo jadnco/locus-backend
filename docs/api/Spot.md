@@ -121,3 +121,75 @@ DELETE /api/spots/:id
 200 OK
 
 ```
+
+## Retrieving likes
+
+```
+GET spots/:id/likes
+```
+
+### Response
+
+```js
+{
+  "likes": {
+    "_id": "56d5b9e6e3a8a67007adae57",
+    "spot": "56d5b9e6e3a8a67007adae56",
+    "users": [
+      {
+        "_id": "56d5b54ffe79fd8906267e7c",
+        "followers": "56d5b54ffe79fd8906267e7d",
+        "name": "Jose Pierce",
+        "handle": "JosePierce",
+        "created": "2016-03-01T15:29:19.602Z",
+        "spotsCount": 0,
+        "followingCount": 0,
+        "followersCount": 0,
+        "likesCount": 0
+      },
+
+      ...
+    ]
+  }
+}
+```
+
+## Adding a like
+
+```
+PUT spots/:id/likes
+```
+
+### Request
+
+```js
+{
+  "user": "56d5b54ffe79fd8906267e7c"
+}
+```
+
+### Response
+
+```js
+200 OK
+```
+
+## Removing a like
+
+```
+DELETE spots/:id/likes
+```
+
+### Request
+
+```js
+{
+  "user": "56d5b54ffe79fd8906267e7c"
+}
+```
+
+### Response
+
+```js
+200 OK
+```
