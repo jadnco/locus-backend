@@ -9,11 +9,12 @@
 | `description` | `String` | | Description of user, serves as the bio. 
 | `location` | `String` | | Location of the user.
 | `likesCount` | `Number` | 0 | Total sum of all Spots the user has liked.
-| `followersCount` | `Number` | 0 | | Total sum of all follower users.
-| `followingCount` | `Number` | 0 | | Total sum of all following users.
+| `followersCount` | `Number` | 0 | Total sum of all follower users.
+| `followingCount` | `Number` | 0 | Total sum of all following users.
 | `spotsCount` | `Number` | 0 | Total sum of all Spots created.
 | `handle` | `String` | | Username and unique identifier with minimum of 3 characters.
-| `created` | `Date` | `Date.now` | | When the record was created.
+| `created` | `Date` | `Date.now` | When the record was created.
+| `headerPhoto` | `Photo.id` | | Photo to display with Profile views.
 
 ## Retrieving a single User
 

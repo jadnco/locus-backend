@@ -5,7 +5,7 @@
 | Name | Type | Default Value | Description
 | --- | --- | --- | ---
 | `hasPhoto` | `Boolean` | | Whether a photo is contained or not.
-| `photo` | `String` | | The url to the photo.
+| `photo` | `Photo.id` | | Reference to a Photo record.
 | `car` | `Car.id` | | Reference to `Car` record.
 | `spotter` | `User` | | Embedded `User` record.
 | `created` | `Date` | `Date.now` | When the record was created.
