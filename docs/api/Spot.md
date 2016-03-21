@@ -94,7 +94,7 @@ If adding a `Location`, only the coordinates should be sent with the request. Th
     "location": {
       "latitude": 59.910974,
       "longitude": 10.705325,
-      "altitude": "94"
+      "altitude": 94
     }
   }
 }
