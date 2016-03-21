@@ -4,15 +4,19 @@
 
 | Name | Type | Default Value | Description
 | --- | --- | --- | ---
-| `hasPhoto` | `Boolean` | | Whether a photo is contained or not.
+| `type` | `String` | | Specify how to display this Spot. One of `photo`, `video`, `mixed` or `location`.
+| `title` | `String` | | Title of the Spot.
+| `caption` | `String` | | Description of the Spot.
 | `photo` | `Photo.id` | | Reference to a Photo record.
+| `url` | `String` | | Web URL of Spot that can be used to share on external services.
 | `car` | `Car.id` | | Reference to `Car` record.
-| `spotter` | `User` | | Embedded `User` record.
+| `spotter` | `User.id` | | Reference to a `User` record. This usually gets populated on requests.
 | `created` | `Date` | `Date.now` | When the record was created.
 | `viewsCount` | `Number`| 0 | How many times the Spot has been viewed by a unique user.
 | `likesCount` | `Number`| 0 | Amount of times the spot has been liked.
 | `modified` | `Date` | | When the record was last updated.
 | `likes` | `Likes.id` | | Reference to a `Likes` record.
+| `location` | `{ lat, long, alt, acc, city, country }` | | Location object.
 
 ### Notes
 
@@ -35,15 +39,35 @@ GET spots/:id
 ```js
 {
   "spot": {
-    "_id": "56c9549c638dab8f0061b993",
-    "likes": "56c9549c638dab8f0061b994",
-    "title": "2009 Maserati Gran Turismo",
-    "photo": "3afdeccd71a202687894203a91a92072",
-    "description": "The first 90% of a project takes 90% of the time, the last 10% takes the other 90% of the time.",
-    "created": "2016-02-21T06:09:32.093Z",
-    "spotter": [],
-    "commentsCount": 96,
-    "likesCount": 269,
+    "_id": "56e9e2c9ab699690196e2a12",
+    "likes": "56e9e2c9ab699690196e2a13",
+    "type": "location",
+    "title": "2016 Jaguar F-Type",
+    "caption": "Spotted this sweet Jag while on my trip to Apple HQ.",
+    "spotter": {
+      "_id": "56e87f088bd4ccc2c70da40f",
+      "followers": "56e87f088bd4ccc2c70da410",
+      "name": "Rose Berry",
+      "handle": "rosey",
+      "location": "Toronto, Canada",
+      "created": "2016-03-15T21:30:48.177Z",
+      "spotsCount": 18,
+      "followingCount": 0,
+      "followersCount": 5,
+      "likesCount": 3,
+      "following": []
+    },
+    "location": {
+      "country": "United States",
+      "city": "Cupertino",
+      "accuracy": 65,
+      "altitude": 0,
+      "longitude": -122.03046898,
+      "latitude": 37.33240730999999
+    },
+    "created": "2016-03-16T22:48:41.451Z",
+    "commentsCount": 0,
+    "likesCount": 0,
     "viewsCount": 0
   }
 }
@@ -57,13 +81,16 @@ POST /api/spots
 
 When a new `Spot` record is created, a `Likes` record also gets created. A relationship is then established by the two via ID reference.
 
+If adding a `Location`, only the coordinates should be sent with the request. The `country` and `city` values automatically get resolved based on those values, using reverse geocoding.
+
 ### Request
 
 ```js
 {
   "spot": {
     "title": "2017 Ford GT",
-    "description": "Here's something to think about: How come you never see a headline like 'Psychic Wins Lottery.'"
+    "description": "Here's something to think about.",
+    "spotter": "56e87eed8bd4ccc2c70da40d"
   }
 }
 ```
@@ -73,12 +100,19 @@ When a new `Spot` record is created, a `Likes` record also gets created. A relat
 ```js
 {
   "spot": {
-    "likes": "56ce70e4b78be0352f872a5c",
+    "likes": "56ef3c172e13cb7455b937e1",
     "title": "2017 Ford GT",
-    "description": "Here's something to think about: How come you never see a headline like 'Psychic Wins Lottery.'",
-    "_id": "56ce70e4b78be0352f872a5b",
-    "created": "2016-02-25T03:11:32.430Z",
-    "spotter": [],
+    "spotter": "56e87eed8bd4ccc2c70da40d",
+    "_id": "56ef3c172e13cb7455b937e0",
+    "location": {
+      "country": "",
+      "city": "",
+      "accuracy": 0,
+      "altitude": 0,
+      "longitude": 0,
+      "latitude": 0
+    },
+    "created": "2016-03-21T00:11:03.787Z",
     "commentsCount": 0,
     "likesCount": 0,
     "viewsCount": 0
