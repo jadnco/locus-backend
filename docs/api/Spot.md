@@ -88,9 +88,14 @@ If adding a `Location`, only the coordinates should be sent with the request. Th
 ```js
 {
   "spot": {
-    "title": "2017 Ford GT",
+    "title": "2014 BMW i8",
     "description": "Here's something to think about.",
-    "spotter": "56e87eed8bd4ccc2c70da40d"
+    "spotter": "56e87eed8bd4ccc2c70da40d",
+    "location": {
+      "latitude": 59.910974,
+      "longitude": 10.705325,
+      "altitude": "94"
+    }
   }
 }
 ```
@@ -100,19 +105,19 @@ If adding a `Location`, only the coordinates should be sent with the request. Th
 ```js
 {
   "spot": {
-    "likes": "56ef3c172e13cb7455b937e1",
-    "title": "2017 Ford GT",
+    "likes": "56ef3f162e13cb7455b937e3",
+    "title": "2014 BMW i8",
     "spotter": "56e87eed8bd4ccc2c70da40d",
-    "_id": "56ef3c172e13cb7455b937e0",
+    "_id": "56ef3f162e13cb7455b937e2",
     "location": {
-      "country": "",
-      "city": "",
+      "country": "Norway",
+      "city": "Oslo",
       "accuracy": 0,
-      "altitude": 0,
-      "longitude": 0,
-      "latitude": 0
+      "altitude": 94,
+      "longitude": 10.705325,
+      "latitude": 59.910974
     },
-    "created": "2016-03-21T00:11:03.787Z",
+    "created": "2016-03-21T00:23:50.618Z",
     "commentsCount": 0,
     "likesCount": 0,
     "viewsCount": 0
